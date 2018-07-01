@@ -1,9 +1,11 @@
 # hdx-vue
 
-> Vue visualization components for Humanitartan Data Exchange
+# Vue visualization components for Humanitartan Data Exchange
 
 This project should provide vue components that would make it easier to
 build HDX data visualizations by fetching data via CKAN web-api.
+
+Demo: https://orest-d.github.io/hdx-vue/
 
 ## Build Setup
 
