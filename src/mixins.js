@@ -8,7 +8,7 @@ export const DataMixin = {
   props:{
     server:{
       type:String,
-      default:'http://test-data.humdata.org'
+      default:'https://test-data.humdata.org'
     },
     queryapi:{
       type:String,
