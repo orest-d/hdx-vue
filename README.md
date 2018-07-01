@@ -2,6 +2,9 @@
 
 > Vue visualization components for Humanitartan Data Exchange
 
+This project should provide vue components that would make it easier to
+build HDX data visualizations by fetching data via CKAN web-api.
+
 ## Build Setup
 
 ``` bash
@@ -14,5 +17,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
