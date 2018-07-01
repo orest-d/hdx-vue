@@ -2,7 +2,8 @@ export const DataMixin = {
   data () {
     return {
         status: 'Empty',
-        data:{},
+        status_ext:"Loading not initiated",
+        data:{},        
     }
   },
   props:{
@@ -72,15 +73,39 @@ export const DataMixin = {
   methods:{
     load (){
       this.status="Loading";
+      this.status_ext=this.url1,
       console.log(this.url1);
       
       this.$http.get(this.url1).then(
         response => {
-          response.json().then(data => {this.data=data;},data => {this.data={};});
-          this.status = '';
-        }, response => {
-          this.data   = {};
+          response.json().then(
+            data => {
+              this.data=data;
+              if (this.data.success){
+                this.status="";
+                this.status_ext="";
+              }
+              else{
+                this.status="Failure";
+                try{
+                  this.status_ext=this.data.error.info.orig.join();
+                }
+                catch(err){
+                  this.status_ext=err;
+                }               
+              }              
+            },
+            data => {
+              this.data=data;
+              this.status = 'JSON Error';
+              this.status_ext="";}
+          );
+        },
+        response => {
+          console.log("ERROR:");
+          console.log(response.url);
           this.status = 'Error';
+          this.status_ext='It could be an error in query:\n'+response.url;
         }
       );
     }
