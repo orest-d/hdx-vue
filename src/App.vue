@@ -49,9 +49,9 @@
 </template>
 
 <script>
-import HdxTable from './HdxTable.vue'
-import HdxSelect from './HdxSelect.vue'
-import HdxPlot from './HdxPlot.vue'
+//import HdxTable from './HdxTable.vue'
+//import HdxSelect from './HdxSelect.vue'
+//import HdxPlot from './HdxPlot.vue'
 
 export default {
   name: 'app',
@@ -67,11 +67,13 @@ export default {
       return "'" + x + "'";
     }
   },
+  /*
   components: {
     'hdx-table': HdxTable,
     'hdx-select': HdxSelect,
     'hdx-plot': HdxPlot
   }
+  */
 }
 </script>
 
